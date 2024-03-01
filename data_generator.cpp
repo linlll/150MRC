@@ -16,6 +16,10 @@ int main(int argc, char const *argv[]) {
   };
   std::uniform_int_distribution<> city_dis(0,4); // city
   std::ofstream ofs("data.txt", std::ios::out);
+  if (!ofs.is_open()) {
+    fprintf(stderr, "file is not open\n");
+    exit(-1);
+  }
 
   clock_t start = clock();
   long long N = 150000000;
