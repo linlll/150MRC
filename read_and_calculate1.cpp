@@ -22,10 +22,9 @@ void *work(void *arg) {
   fs->ifs->seekg(fs->begin, std::ios::beg);
   result_t *map = new result_t;
   while (getline(*(fs->ifs), line)) {
-    int i = 0;
-    while (line[i++] != ',');
-    std::string c = line.substr(0, i-1);
-    std::string v = line.substr(i, line.size()-i);
+    int i = line.find(',');
+    std::string c = line.substr(0, i);
+    std::string v = line.substr(i+1, line.size()-i-1);
     long long t = std::stoi(v);
     (*map)[c].first += t;
     (*map)[c].second++;
@@ -64,7 +63,7 @@ int main(int argc, char const *argv[]) {
     filepath = std::string(argv[2]);
   }
 
-  const int thread_num = 10;
+  const int thread_num = 18;
 
   std::ifstream ifs(filepath, std::ios::in);
   if (!ifs.is_open()) {
