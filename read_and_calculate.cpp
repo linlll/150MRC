@@ -9,21 +9,21 @@
 #define POSSIBEL_AVERAGE_ROW_LENGTH 10
 
 typedef struct FileStruct {
-  std::ifstream *ifs;
+  FILE *f;
   uint64_t begin;
   uint64_t end;
 } FileStruct;
 
-typedef std::unordered_map<char, std::pair<long long, long long>> result_t;
-
 void *work(void *arg) {
   FileStruct *fs = (FileStruct*)arg;
-  std::string line;
-  fs->ifs->seekg(fs->begin, std::ios::beg);
+  fseek(fs->f, fs->begin, SEEK_SET);
 
   long long *ret = new long long[10];
   memset(ret, 0, sizeof(long long)*10);
-  while (getline(*(fs->ifs), line)) {
+  char line[20];
+  while (!feof(fs->f)) {
+    char *p = fgets(line, 20, fs->f);
+    if (p == nullptr) continue;
     int i = 0, j;
     char c = line[0];
     switch (line[0]) {
@@ -46,7 +46,7 @@ void *work(void *arg) {
       sign = -1;
       i++;
     }
-    while (i < line.size()) {
+    while (line[i] != '\n') {
       t = 10 * t + line[i] - '0';
       i++;
     }
@@ -55,8 +55,8 @@ void *work(void *arg) {
     ret[2*j] += t;
     ret[2*j+1]++;
 
-    uint64_t pos = fs->ifs->tellg();
-    if (pos >= (uint64_t)(fs->end))
+    uint64_t pos = ftell(fs->f);
+    if (pos >= fs->end)
       break;
   }
   return ret;
@@ -64,7 +64,7 @@ void *work(void *arg) {
 
 int main(int argc, char const *argv[]) {
   long long N = 150000000;
-  std::string filepath = "/data/data.txt";
+  std::string filepath = "data.txt";
   if (argc != 3) {
     fprintf(stderr, "usage: ./data_generator number filepath\n");
     exit(-1);
@@ -75,9 +75,9 @@ int main(int argc, char const *argv[]) {
 
   const int thread_num = 18;
 
-  std::ifstream ifs(filepath, std::ios::in);
-  if (!ifs.is_open()) {
-    fprintf(stderr, "file is not open\n");
+  FILE *f = fopen(filepath.c_str(), "r");
+  if (f == nullptr) {
+    fprintf(stderr, "file not open.\n");
     exit(-1);
   }
 
@@ -89,12 +89,17 @@ int main(int argc, char const *argv[]) {
   uint64_t _split = 0;
   for (int i = 0; i < thread_num; i++) {
     uint64_t split = ((i+1)*N/thread_num)*POSSIBEL_AVERAGE_ROW_LENGTH;
-    ifs.seekg(split, std::ios::beg);
-    while (ifs.get() != '\n');
-    split = ifs.tellg();
+    fseek(f, split, SEEK_SET);
+    char c;
+    while (1) {
+      c = fgetc(f);
+      if (c == '\n')
+        break;
+    }
+    split = ftell(f);
 
-    fs[i].ifs = new std::ifstream(filepath, std::ios::in);
-    if (!fs[i].ifs->is_open()) {
+    fs[i].f = fopen(filepath.c_str(), "r");
+    if (fs[i].f == nullptr) {
       fprintf(stderr, "file not open.\n");
       exit(-1);
     }
@@ -125,7 +130,6 @@ int main(int argc, char const *argv[]) {
     }
   }
 
-
   printf("%s: %.2f\n", "zhejiang", ((float)ret[0][0])/ret[0][1]);
   printf("%s: %.2f\n", "shandong", ((float)ret[0][2])/ret[0][3]);
   printf("%s: %.2f\n", "shanghai", ((float)ret[0][4])/ret[0][5]);
@@ -133,8 +137,7 @@ int main(int argc, char const *argv[]) {
   printf("%s: %.2f\n", "beijing", ((float)ret[0][8])/ret[0][9]);
 
   for (int i = 0; i < thread_num; i++) {
-    fs[i].ifs->close();
-    delete fs[i].ifs;
+    fclose(fs[i].f);
   }
   delete fs;
   for (int i = 0; i < thread_num; i++) {
