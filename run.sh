@@ -21,14 +21,3 @@ time=$(cat average_time.txt)
 echo "Agerage Time: $time"
 mv run.log ..
 mv average_time.txt ..
-rm -rf run1.log
-touch run1.log
-for ((i=1;i<=$1;i++))
-do
-  /usr/bin/time -a -o run1.log ./read_and_calculate1 $N data.txt >> run1.log
-done
-./analysis_log run1.log > average_time1.txt
-time1=$(cat average_time1.txt)
-echo "Agerage Time: $time1"
-mv run1.log ..
-mv average_time1.txt ..

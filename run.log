@@ -3,68 +3,12 @@ nanjing: 7.00
 beijing: -12.00
 zhejiang: 1.00
 shandong: 30.00
-72.64user 12.50system 0:10.13elapsed 840%CPU (0avgtext+0avgdata 7628maxresident)k
-0inputs+8outputs (0major+241minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-74.22user 12.19system 0:10.37elapsed 833%CPU (0avgtext+0avgdata 5920maxresident)k
-0inputs+0outputs (0major+246minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-74.82user 12.38system 0:10.28elapsed 847%CPU (0avgtext+0avgdata 7828maxresident)k
-0inputs+8outputs (0major+238minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-83.70user 14.00system 0:10.98elapsed 889%CPU (0avgtext+0avgdata 7732maxresident)k
-0inputs+0outputs (0major+240minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-80.30user 13.58system 0:10.80elapsed 869%CPU (0avgtext+0avgdata 9856maxresident)k
-0inputs+8outputs (0major+251minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-81.43user 14.29system 0:10.77elapsed 888%CPU (0avgtext+0avgdata 6036maxresident)k
-0inputs+8outputs (0major+245minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-81.97user 13.94system 0:10.80elapsed 887%CPU (0avgtext+0avgdata 7796maxresident)k
-0inputs+8outputs (0major+243minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-84.54user 14.56system 0:11.16elapsed 887%CPU (0avgtext+0avgdata 7740maxresident)k
+69.77user 12.74system 0:09.91elapsed 832%CPU (0avgtext+0avgdata 7896maxresident)k
 0inputs+8outputs (0major+244minor)pagefaults 0swaps
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
 zhejiang: 1.00
 shandong: 30.00
-81.39user 13.87system 0:10.95elapsed 869%CPU (0avgtext+0avgdata 7832maxresident)k
-0inputs+8outputs (0major+250minor)pagefaults 0swaps
-shanghai: -10.50
-nanjing: 7.00
-beijing: -12.00
-zhejiang: 1.00
-shandong: 30.00
-80.02user 14.00system 0:10.83elapsed 867%CPU (0avgtext+0avgdata 7820maxresident)k
-0inputs+8outputs (0major+244minor)pagefaults 0swaps
+68.98user 12.46system 0:09.88elapsed 823%CPU (0avgtext+0avgdata 11724maxresident)k
+0inputs+0outputs (0major+237minor)pagefaults 0swaps

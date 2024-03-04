@@ -10,13 +10,8 @@ set(
   READ_AND_CALCULATE_SRCS
   read_and_calculate.cpp
 )
-set(
-  READ_AND_CALCULATE1_SRCS
-  read_and_calculate1.cpp
-)
 set(ANALYSIS_LOG_SRCS analysis_log.cpp)
 
 add_executable(data_generator ${DATA_GENERATOR_SRCS})
 add_executable(read_and_calculate ${READ_AND_CALCULATE_SRCS})
-add_executable(read_and_calculate1 ${READ_AND_CALCULATE1_SRCS})
 add_executable(analysis_log ${ANALYSIS_LOG_SRCS})
