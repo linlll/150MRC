@@ -13,7 +13,7 @@ typedef struct FileStruct {
   uint64_t end;
 } FileStruct;
 
-typedef std::unordered_map<std::string, std::pair<long long, long long>> result_t;
+typedef std::unordered_map<char, std::pair<long long, long long>> result_t;
 typedef result_t* result_pos_t;
 
 void *work(void *arg) {
@@ -23,14 +23,17 @@ void *work(void *arg) {
   result_t *map = new result_t;
   while (getline(*(fs->ifs), line)) {
     int i = 0;
+    char c = line[0];
     switch (line[0]) {
-    case 'z': case 's': i = 8; break;
-    case 'n': case 'b': i = 7; break;
+    case 'z': i = 8; break;
+    case 's': i = 8; break;
+    case 'n': i = 7; break;
+    case 'b': i = 7; break;
     default: break;
     }
 
-    // int i = line.find(',');
-    std::string c = line.substr(0, i);
+    if (c == 's' && line[4] == 'g') c++;
+
     std::string v = line.substr(i+1, line.size()-i-1);
     long long t = std::stoi(v);
     (*map)[c].first += t;
@@ -100,7 +103,7 @@ int main(int argc, char const *argv[]) {
 
   for (int i = thread_num-1; i > 0; i--) {
     for (auto it = ret[i]->begin(); it != ret[i]->end(); it++) {
-      std::string c = it->first;
+      char c = it->first;
       float t = it->second.first;
       long long n = it->second.second;
       (*ret[i-1])[c].first += t;
@@ -108,7 +111,16 @@ int main(int argc, char const *argv[]) {
     }
   }
   for (auto it = ret[0]->begin(); it != ret[0]->end(); it++) {
-    printf("%s: %.2f\n", it->first.c_str(), ((float)(it->second.first))/it->second.second);
+    std::string c;
+    switch (it->first) {
+    case 'z': c = "zhejiang"; break;
+    case 'n': c = "nanjing"; break;
+    case 't': c = "shanghai"; break;
+    case 's': c = "shandong"; break;
+    case 'b': c = "beijing"; break;
+    default: break;
+    }
+    printf("%s: %.2f\n", c.c_str(), ((float)(it->second.first))/it->second.second);
   }
   for (int i = 0; i < thread_num; i++) {
     fs[i].ifs->close();
