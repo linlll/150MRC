@@ -1,0 +1,70 @@
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.32user 11.67system 0:04.97elapsed 804%CPU (0avgtext+0avgdata 5804maxresident)k
+0inputs+8outputs (0major+242minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.19user 12.22system 0:05.02elapsed 803%CPU (0avgtext+0avgdata 5768maxresident)k
+0inputs+0outputs (0major+240minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.12user 11.86system 0:04.98elapsed 802%CPU (0avgtext+0avgdata 7660maxresident)k
+0inputs+0outputs (0major+239minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.41user 11.44system 0:04.99elapsed 797%CPU (0avgtext+0avgdata 5872maxresident)k
+0inputs+0outputs (0major+247minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.70user 11.55system 0:05.01elapsed 803%CPU (0avgtext+0avgdata 7832maxresident)k
+0inputs+0outputs (0major+244minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.21user 12.16system 0:05.15elapsed 783%CPU (0avgtext+0avgdata 7864maxresident)k
+0inputs+0outputs (0major+246minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.92user 11.59system 0:05.01elapsed 807%CPU (0avgtext+0avgdata 9836maxresident)k
+0inputs+8outputs (0major+245minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+28.75user 11.38system 0:04.96elapsed 808%CPU (0avgtext+0avgdata 5896maxresident)k
+0inputs+0outputs (0major+245minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+29.58user 11.62system 0:05.12elapsed 804%CPU (0avgtext+0avgdata 7708maxresident)k
+0inputs+0outputs (0major+240minor)pagefaults 0swaps
+zhejiang: 1.00
+shandong: 30.00
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+29.35user 12.21system 0:05.16elapsed 805%CPU (0avgtext+0avgdata 7776maxresident)k
+0inputs+0outputs (0major+241minor)pagefaults 0swaps
