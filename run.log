@@ -3,12 +3,68 @@ nanjing: 7.00
 beijing: -12.00
 zhejiang: 1.00
 shandong: 30.00
-69.77user 12.74system 0:09.91elapsed 832%CPU (0avgtext+0avgdata 7896maxresident)k
-0inputs+8outputs (0major+244minor)pagefaults 0swaps
+67.25user 12.43system 0:09.54elapsed 835%CPU (0avgtext+0avgdata 7848maxresident)k
+0inputs+8outputs (0major+243minor)pagefaults 0swaps
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
 zhejiang: 1.00
 shandong: 30.00
-68.98user 12.46system 0:09.88elapsed 823%CPU (0avgtext+0avgdata 11724maxresident)k
-0inputs+0outputs (0major+237minor)pagefaults 0swaps
+67.65user 12.47system 0:09.68elapsed 827%CPU (0avgtext+0avgdata 7720maxresident)k
+0inputs+0outputs (0major+240minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+68.15user 12.53system 0:09.83elapsed 820%CPU (0avgtext+0avgdata 7664maxresident)k
+0inputs+0outputs (0major+239minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+66.16user 12.98system 0:09.86elapsed 802%CPU (0avgtext+0avgdata 5848maxresident)k
+0inputs+8outputs (0major+241minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+69.32user 12.82system 0:09.77elapsed 840%CPU (0avgtext+0avgdata 7836maxresident)k
+0inputs+8outputs (0major+242minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+71.10user 12.82system 0:09.99elapsed 839%CPU (0avgtext+0avgdata 7940maxresident)k
+0inputs+8outputs (0major+243minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+75.62user 13.91system 0:10.28elapsed 870%CPU (0avgtext+0avgdata 7788maxresident)k
+0inputs+8outputs (0major+247minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+76.39user 14.59system 0:10.59elapsed 858%CPU (0avgtext+0avgdata 7696maxresident)k
+0inputs+8outputs (0major+238minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+73.99user 14.21system 0:10.32elapsed 854%CPU (0avgtext+0avgdata 7836maxresident)k
+0inputs+8outputs (0major+241minor)pagefaults 0swaps
+shanghai: -10.50
+nanjing: 7.00
+beijing: -12.00
+zhejiang: 1.00
+shandong: 30.00
+78.21user 14.81system 0:10.51elapsed 884%CPU (0avgtext+0avgdata 7848maxresident)k
+0inputs+8outputs (0major+240minor)pagefaults 0swaps

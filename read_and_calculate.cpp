@@ -22,7 +22,14 @@ void *work(void *arg) {
   fs->ifs->seekg(fs->begin, std::ios::beg);
   result_t *map = new result_t;
   while (getline(*(fs->ifs), line)) {
-    int i = line.find(',');
+    int i = 0;
+    switch (line[0]) {
+    case 'z': case 's': i = 8; break;
+    case 'n': case 'b': i = 7; break;
+    default: break;
+    }
+
+    // int i = line.find(',');
     std::string c = line.substr(0, i);
     std::string v = line.substr(i+1, line.size()-i-1);
     long long t = std::stoi(v);
@@ -36,23 +43,6 @@ void *work(void *arg) {
 }
 
 int main(int argc, char const *argv[]) {
-/*
-  // 计算每一行的平均长度
-  std::string s;
-  std::ifstream ifs(DATA_FILEPATH, std::ios::in);
-  if (!ifs.is_open()) {
-    fprintf(stderr, "file is not open\n");
-    exit(-1);
-  }
-  long long a = 0, b = 0;
-  while(getline(ifs, s)) {
-    a += s.size();
-    b++;
-  }
-  printf("%f\n", ((float)a)/b);
-  exit(-1);
-*/
-
   long long N = 150000000;
   std::string filepath = "/data/data.txt";
   if (argc != 3) {
