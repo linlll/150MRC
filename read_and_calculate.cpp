@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <iostream>
 #include <stdint.h>
+#include <string.h>
 
 #define POSSIBEL_AVERAGE_ROW_LENGTH 10
 
@@ -14,35 +15,39 @@ typedef struct FileStruct {
 } FileStruct;
 
 typedef std::unordered_map<char, std::pair<long long, long long>> result_t;
-typedef result_t* result_pos_t;
 
 void *work(void *arg) {
   FileStruct *fs = (FileStruct*)arg;
   std::string line;
   fs->ifs->seekg(fs->begin, std::ios::beg);
-  result_t *map = new result_t;
+
+  long long *ret = new long long[10];
+  memset(ret, 0, sizeof(long long)*10);
   while (getline(*(fs->ifs), line)) {
-    int i = 0;
+    int i = 0, j;
     char c = line[0];
     switch (line[0]) {
-    case 'z': i = 8; break;
-    case 's': i = 8; break;
-    case 'n': i = 7; break;
-    case 'b': i = 7; break;
+    case 'z': i = 8; j = 0; break;
+    case 's': i = 8; j = 1; break;
+    case 'n': i = 7; j = 3; break;
+    case 'b': i = 7; j = 4; break;
     default: break;
     }
 
-    if (c == 's' && line[4] == 'g') c++;
+    if (c == 's' && line[4] == 'g') {
+      c++;
+      j++;
+    }
 
     std::string v = line.substr(i+1, line.size()-i-1);
     long long t = std::stoi(v);
-    (*map)[c].first += t;
-    (*map)[c].second++;
+    ret[2*j] += t;
+    ret[2*j+1]++;
     uint64_t pos = fs->ifs->tellg();
     if (pos >= (uint64_t)(fs->end))
       break;
   }
-  return map;
+  return ret;
 }
 
 int main(int argc, char const *argv[]) {
@@ -96,32 +101,22 @@ int main(int argc, char const *argv[]) {
     pthread_create(&tid[i], NULL, work, &fs[i]);
   }
 
-  result_t **ret = new result_t*[thread_num];
+  long long **ret = new long long*[thread_num];
   for (int i = 0; i < thread_num; i++) {
     pthread_join(tid[i], (void**)(&ret[i]));
   }
 
   for (int i = thread_num-1; i > 0; i--) {
-    for (auto it = ret[i]->begin(); it != ret[i]->end(); it++) {
-      char c = it->first;
-      float t = it->second.first;
-      long long n = it->second.second;
-      (*ret[i-1])[c].first += t;
-      (*ret[i-1])[c].second += n;
+    for (int j = 0; j < 5; j++) {
+      ret[i-1][2*j] += ret[i][2*j];
+      ret[i-1][2*j+1] += ret[i][2*j+1];
     }
   }
-  for (auto it = ret[0]->begin(); it != ret[0]->end(); it++) {
-    std::string c;
-    switch (it->first) {
-    case 'z': c = "zhejiang"; break;
-    case 'n': c = "nanjing"; break;
-    case 't': c = "shanghai"; break;
-    case 's': c = "shandong"; break;
-    case 'b': c = "beijing"; break;
-    default: break;
-    }
-    printf("%s: %.2f\n", c.c_str(), ((float)(it->second.first))/it->second.second);
-  }
+  printf("%s: %.2f\n", "zhejiang", ((float)ret[0][0])/ret[0][1]);
+  printf("%s: %.2f\n", "shandong", ((float)ret[0][2])/ret[0][3]);
+  printf("%s: %.2f\n", "shanghai", ((float)ret[0][4])/ret[0][5]);
+  printf("%s: %.2f\n", "nanjing", ((float)ret[0][6])/ret[0][7]);
+  printf("%s: %.2f\n", "beijing", ((float)ret[0][8])/ret[0][9]);
   for (int i = 0; i < thread_num; i++) {
     fs[i].ifs->close();
     delete fs[i].ifs;
