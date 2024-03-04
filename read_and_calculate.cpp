@@ -39,10 +39,22 @@ void *work(void *arg) {
       j++;
     }
 
-    std::string v = line.substr(i+1, line.size()-i-1);
-    long long t = std::stoi(v);
+    int t = 0;
+    int sign = 1;
+    i++;
+    if (line[i] == '-') {
+      sign = -1;
+      i++;
+    }
+    while (i < line.size()) {
+      t = 10 * t + line[i] - '0';
+      i++;
+    }
+    t *= sign;
+
     ret[2*j] += t;
     ret[2*j+1]++;
+
     uint64_t pos = fs->ifs->tellg();
     if (pos >= (uint64_t)(fs->end))
       break;
@@ -112,11 +124,14 @@ int main(int argc, char const *argv[]) {
       ret[i-1][2*j+1] += ret[i][2*j+1];
     }
   }
+
+
   printf("%s: %.2f\n", "zhejiang", ((float)ret[0][0])/ret[0][1]);
   printf("%s: %.2f\n", "shandong", ((float)ret[0][2])/ret[0][3]);
   printf("%s: %.2f\n", "shanghai", ((float)ret[0][4])/ret[0][5]);
   printf("%s: %.2f\n", "nanjing", ((float)ret[0][6])/ret[0][7]);
   printf("%s: %.2f\n", "beijing", ((float)ret[0][8])/ret[0][9]);
+
   for (int i = 0; i < thread_num; i++) {
     fs[i].ifs->close();
     delete fs[i].ifs;
