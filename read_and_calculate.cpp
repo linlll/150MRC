@@ -16,7 +16,6 @@
 
 typedef struct FileStruct {
   char *start_addr;
-  char *end_addr;
   long long size;
 } FileStruct;
 
@@ -115,7 +114,6 @@ int main(int argc, char const *argv[]) {
     }
     offset = MIN(offset, attr.st_size);
     fs[i].start_addr = &((char*)addr)[_offset];
-    fs[i].end_addr = &((char*)addr)[offset];
     fs[i].size = offset - _offset + 1;
     _offset = offset + 1;
   }
