@@ -14,7 +14,7 @@ rm -rf run.log
 touch run.log
 for ((i=1;i<=$1;i++))
 do
-  /usr/bin/time -a -o run.log ./read_and_calculate $N data.txt >> run.log
+  /usr/bin/time -a -o run.log ./read_and_calculate data.txt >> run.log
 done
 ./analysis_log run.log > average_time.txt
 time=$(cat average_time.txt)

@@ -3,68 +3,68 @@ shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.80user 0.42system 0:01.57elapsed 774%CPU (0avgtext+0avgdata 6324maxresident)k
-0inputs+8outputs (0major+222minor)pagefaults 0swaps
+4.31user 0.09system 0:00.29elapsed 1510%CPU (0avgtext+0avgdata 1703536maxresident)k
+0inputs+8outputs (0major+26760minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.66user 0.47system 0:01.56elapsed 774%CPU (0avgtext+0avgdata 8168maxresident)k
-0inputs+0outputs (0major+214minor)pagefaults 0swaps
+3.77user 0.13system 0:00.27elapsed 1443%CPU (0avgtext+0avgdata 1703968maxresident)k
+0inputs+0outputs (0major+26759minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.46user 0.52system 0:01.55elapsed 772%CPU (0avgtext+0avgdata 8196maxresident)k
-0inputs+0outputs (0major+221minor)pagefaults 0swaps
+3.78user 0.05system 0:00.24elapsed 1579%CPU (0avgtext+0avgdata 1703504maxresident)k
+0inputs+0outputs (0major+26761minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.75user 0.34system 0:01.56elapsed 775%CPU (0avgtext+0avgdata 6352maxresident)k
-0inputs+0outputs (0major+221minor)pagefaults 0swaps
+3.88user 0.05system 0:00.24elapsed 1621%CPU (0avgtext+0avgdata 1703312maxresident)k
+0inputs+0outputs (0major+26757minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.49user 0.35system 0:01.56elapsed 757%CPU (0avgtext+0avgdata 6264maxresident)k
-0inputs+0outputs (0major+221minor)pagefaults 0swaps
+3.86user 0.09system 0:00.24elapsed 1609%CPU (0avgtext+0avgdata 1703868maxresident)k
+0inputs+0outputs (0major+26755minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.65user 0.32system 0:01.57elapsed 759%CPU (0avgtext+0avgdata 8244maxresident)k
-0inputs+0outputs (0major+220minor)pagefaults 0swaps
+3.77user 0.13system 0:00.24elapsed 1602%CPU (0avgtext+0avgdata 1703248maxresident)k
+0inputs+0outputs (0major+26756minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.79user 0.31system 0:01.57elapsed 768%CPU (0avgtext+0avgdata 6340maxresident)k
-0inputs+0outputs (0major+219minor)pagefaults 0swaps
+3.83user 0.06system 0:00.24elapsed 1610%CPU (0avgtext+0avgdata 1703348maxresident)k
+0inputs+0outputs (0major+26755minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.76user 0.38system 0:01.58elapsed 768%CPU (0avgtext+0avgdata 6280maxresident)k
-0inputs+0outputs (0major+223minor)pagefaults 0swaps
+3.85user 0.08system 0:00.24elapsed 1610%CPU (0avgtext+0avgdata 1703276maxresident)k
+0inputs+0outputs (0major+26754minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.80user 0.34system 0:01.58elapsed 764%CPU (0avgtext+0avgdata 4284maxresident)k
-0inputs+0outputs (0major+222minor)pagefaults 0swaps
+3.83user 0.05system 0:00.24elapsed 1610%CPU (0avgtext+0avgdata 1703464maxresident)k
+0inputs+8outputs (0major+26760minor)pagefaults 0swaps
 zhejiang: 1.00
 shandong: 30.00
 shanghai: -10.50
 nanjing: 7.00
 beijing: -12.00
-11.74user 0.25system 0:01.58elapsed 757%CPU (0avgtext+0avgdata 6148maxresident)k
-0inputs+0outputs (0major+217minor)pagefaults 0swaps
+3.85user 0.13system 0:00.24elapsed 1626%CPU (0avgtext+0avgdata 1703500maxresident)k
+0inputs+0outputs (0major+26754minor)pagefaults 0swaps
