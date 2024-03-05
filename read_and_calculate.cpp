@@ -11,7 +11,6 @@
 #include <sys/types.h>
 #include <math.h>
 
-#define POSSIBEL_AVERAGE_ROW_LENGTH 10
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
 
 typedef struct FileStruct {
@@ -124,6 +123,7 @@ int main(int argc, char const *argv[]) {
     fprintf(stderr, "malloc failed.\n");
     exit(-1);
   }
+
   for (int i = 0; i < thread_num; i++) {
     pthread_create(&tid[i], NULL, work, &fs[i]);
   }
